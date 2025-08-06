@@ -7,13 +7,11 @@ from sklearn.linear_model import LinearRegression
 df = pd.read_csv("/Users/niteshnirranjan/Downloads/DCT_mal.csv")
 
 #splitting the dataset into training and test set 
-X = df.iloc[:,0:1]
-Y = df.iloc[:,1:2]
+X = df.iloc[:,0:2]
+Y = df.iloc[:,196:197]
 
 X_train , X_test , Y_train , Y_test = train_test_split(X,Y,test_size=0.2)
 
 #linear regression
 reg = LinearRegression().fit(X_train,Y_train)
 Y_train_pred = reg.predict(X_train)
-
-print(Y_train_pred)
